@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: noami-nobodu4788-next-page-router-zip-deployment
+  labels:
+    app: noami-nobodu4788-next-page-router-zip
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: noami-nobodu4788-next-page-router-zip
+  template:
+    metadata:
+      labels:
+        app: noami-nobodu4788-next-page-router-zip
+    spec:
+      containers:
+        - name: noami-nobodu4788-next-page-router-zip-container
+          image: pipejet/noami-nobodu4788-next-page-router-zip:latest
+          ports:
+            - containerPort: 3000
